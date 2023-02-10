@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "ubuntu_cmd";
+    src:url("recources/Ubuntu-Medium.woff") format("woff"),
+        url("recources/Ubuntu-Medium.woff2") format("woff2");
+         
+}
+
+#terminal{
+    font-family: "ubuntu_cmd", monospace;
+    position: absolute;
+    width: 900px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -450px;
+    background: black;
+    color: white;
+}
