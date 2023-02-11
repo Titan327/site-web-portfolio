@@ -5,14 +5,42 @@
          
 }
 
+body {
+    margin: 0;
+    background-color: #130;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
 #terminal{
     font-family: "ubuntu_cmd", monospace;
-    position: absolute;
-    width: 900px;
-    height: 600px;
-    top: 50%;
-    left: 50%;
-    margin: -300px 0 0 -450px;
+    font-size: medium;
+
+    width: 85%;
+    height: 75%;
     background: black;
     color: white;
+    
+}
+
+#terminal_top_bar{
+
+    padding-left: 20px;
+
+    background-color: rgb(32, 32, 32);
+    width: 100% -20px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    
+}
+
+#terminal_body{
+
+    padding-left: 10px;
+    padding-top: 10px;
+
 }
