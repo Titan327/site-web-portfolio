@@ -1,7 +1,7 @@
 @font-face {
     font-family: "ubuntu_cmd";
-    src:url("recources/Ubuntu-Medium.woff") format("woff"),
-        url("recources/Ubuntu-Medium.woff2") format("woff2");
+    src:url("../recources/Ubuntu-Medium.woff") format("woff"),
+        url("../recources/Ubuntu-Medium.woff2") format("woff2");
          
 }
 
@@ -43,4 +43,12 @@ body {
     padding-left: 10px;
     padding-top: 10px;
 
+}
+
+textarea {
+    display: none;
+}
+
+p::before{
+    content: "visiteur@tristan-tourbier.com:~$ ";
 }
