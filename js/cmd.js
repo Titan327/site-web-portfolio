@@ -19,8 +19,9 @@ document.addEventListener("keydown", function(event) {
 
     console.log("Touche pressée : " + event.key + event.keyCode);    
 
-    if (key_press === "Delete") {
-    console.log("La touche Suppr a été appuyée.");
+
+    if(key_press.length === 1){
+        cmd_line.innerHTML = cmd_line.innerHTML.replace('<span id="select">|</span>',"") + event.key;
     }
     else if(key_press === "Backspace" & cmd_line.innerHTML[cmd_line.innerHTML.length - 1] != "$"){
         console.log("La touche Back a été appuyée.");
@@ -49,7 +50,7 @@ document.addEventListener("keydown", function(event) {
                 break;
             case "email":
                 rep = "tristan.tourbier@supinfo.com"
-                window.open("mailto:tristan.tourbier@supinfo.com");
+                window.open("mailto:");
                 break;
             case "whois":
                 rep = "Bonjour, je m'appele Tristan TOURBIER, étudiant de 2eme année en ecole d'informatique a Supinfo Lille. Sur ce site vous pourrez retrouver tout mes liens important, mes contacts ainsi que mon cv."
@@ -74,7 +75,7 @@ document.addEventListener("keydown", function(event) {
         new_input.id = `ligne_${i}`;
         new_input.class = "input";
         new_input.classList.add("input");
-        new_input.innerHTML = "";
+        new_input.innerHTML = "" + '<span id="select">|</span>';
         com.appendChild(new_input);
 
         console.log(i)
@@ -82,12 +83,22 @@ document.addEventListener("keydown", function(event) {
         cmd_body.scrollTop = cmd_body.scrollHeight;
 
     }
-    else if(key_press.length === 1){
-        cmd_line.innerHTML = cmd_line.innerHTML + event.key;
-    }
+    
     
     
 
 });
 
 
+// gestion de la barre clignotante
+
+
+const char = document.getElementById("select");
+
+setInterval(function() {
+    if (char.style.visibility === "hidden") {
+    char.style.visibility = "visible";
+    } else {
+    char.style.visibility = "hidden";
+    }
+}, 500);
