@@ -14,7 +14,7 @@
     <div id="terminal">
         <div id="terminal_top_bar">cmd</div>
         <div id="terminal_body">
-        <pre id="ascii">
+            <pre id="ascii">
             
 ________________________________________________________________/\\\\\________________/\\\\\\________________________        
 ______________________________________________________________/\\\///________________\////\\\________________________       
@@ -26,11 +26,10 @@ ______________________________________________________________/\\\///___________
       _\/\\\__________\///\\\\\/___\/\\\____________\//\\\\\______\/\\\_______\///\\\\\/____/\\\\\\\\\_\/\\\__\///\\\\\/___ 
        _\///_____________\/////_____\///______________\/////_______\///__________\/////_____\/////////__\///_____\/////_____
 
-        </pre>
-        <div id="communication">
-            <p id="ligne_1"></p>
-        </div>
-        
+            </pre>
+            <div id="communication">
+                <p id="ligne_1" class="input"></p>
+            </div>
         </div>
     </div>
 
@@ -38,61 +37,4 @@ ______________________________________________________________/\\\///___________
 </body>
 </html>
 
-<script>
-
-    /*
-    text_area = document.getElementById("type");
-    text_area.focus();
-    text_area.addEventListener("blur", function() {this.focus();});
-    */
-
-    var div = document.getElementById("ascii");
-    var text = div.innerHTML;
-    var newText = text.replace(/_/g, "<span style='color: green;'>-</span>");
-    div.innerHTML = newText;
-
-    var com = document.getElementById("communication");
-
-    i = 1;
-
-    document.addEventListener("keydown", function(event) {
-
-        var key_press = event.key;
-
-        var cmd_line = document.getElementById(`ligne_${i}`);
-
-        console.log(`ligne_${i}`)
-
-        console.log("Touche pressée : " + event.key + event.keyCode);    
-
-        if (key_press === "Delete") {
-        console.log("La touche Suppr a été appuyée.");
-        }
-        else if(key_press === "Backspace" & cmd_line.innerHTML[cmd_line.innerHTML.length - 1] != "$"){
-            console.log("La touche Back a été appuyée.");
-            cmd_line.innerHTML = cmd_line.innerHTML.slice(0,-1);
-        }
-        else if(key_press === "Enter"){
-            console.log("La touche enter a été appuyée.");
-
-            i = i + 1;
-
-            var new_line = document.createElement("p");
-            new_line.id = `ligne_${i}`;
-            new_line.innerHTML = "";
-            com.appendChild(new_line);
-
-            console.log(i)
-
-        }
-        else if(key_press.length === 1){
-            cmd_line.innerHTML = cmd_line.innerHTML + event.key;
-        }
-        
-        
-
-    });
-
-    
-
-</script>
+<script src="js/cmd.js"></script>
