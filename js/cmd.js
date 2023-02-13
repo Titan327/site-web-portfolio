@@ -49,10 +49,13 @@ document.addEventListener("keydown", function(event) {
                 break;
             case "email":
                 rep = "tristan.tourbier@supinfo.com"
-                window.open("mailto:example@example.com");
+                window.open("mailto:tristan.tourbier@supinfo.com");
                 break;
             case "whois":
                 rep = "Bonjour, je m'appele Tristan TOURBIER, étudiant de 2eme année en ecole d'informatique a Supinfo Lille. Sur ce site vous pourrez retrouver tout mes liens important, mes contacts ainsi que mon cv."
+                break;
+            case "":
+                rep = " "
                 break;
             default:
                 rep = "Erreur: commande inconnue, utiliser \"help\" pour conaitre la liste de commandes";
