@@ -20,8 +20,9 @@ body {
 
     width: 85%;
     height: 75%;
-    background: black;
+    
     color: white;
+    
     
     
 }
@@ -31,7 +32,7 @@ body {
     padding-left: 20px;
 
     background-color: rgb(32, 32, 32);
-    width: 100% -20px;
+    width: calc(100% - 20px);
     height: 44px;
 
     display: flex;
@@ -44,18 +45,12 @@ body {
     padding-left: 10px;
     padding-top: 10px;
 
-    overflow: auto;    
+    height: calc(100% - 44px);
 
-}
+    background: black;
 
-#communication{
+    overflow: auto; 
 
-    
-
-}
-
-textarea {
-    display: none;
 }
 
 .input::before{
