@@ -15,21 +15,19 @@ document.addEventListener("keydown", function(event) {
 
     var cmd_line = document.getElementById(`ligne_${i}`);
 
-    console.log(`ligne_${i}`)
-
-    console.log("Touche pressée : " + event.key + event.keyCode);    
-
-
     if(key_press.length === 1){
-        cmd_line.innerHTML = cmd_line.innerHTML.replace('<span id="select">|</span>',"") + event.key;
+
+        cmd_line.innerHTML = cmd_line.innerHTML + event.key;
+        
     }
     else if(key_press === "Backspace" & cmd_line.innerHTML[cmd_line.innerHTML.length - 1] != "$"){
-        console.log("La touche Back a été appuyée.");
+
         cmd_line.innerHTML = cmd_line.innerHTML.slice(0,-1);
+
     }
     else if(key_press === "Enter"){
-        console.log("La touche enter a été appuyée.");
 
+        cmd_line.classList.remove("curseur");
 
         var rep = "";
         switch(cmd_line.innerHTML){
@@ -37,20 +35,20 @@ document.addEventListener("keydown", function(event) {
                 rep = "Besoin d'aide ? Voici une liste des comandes:<br><span style=\"color: yellow\">cv</span> -> Acceder à mon cv<br><span style=\"color: yellow\">projets</span> -> voire mes projets sur Github<br><span style=\"color: yellow\">linkedin</span> -> Acceder à mon Linkedin<br><span style=\"color: yellow\">email</span> -> pour pouvoir me contacter par mail<br><span style=\"color: yellow\">whois</span> -> qui suis-je";
                 break;
             case "cv":
-                rep = "ouverture du cv..."
+                rep = "Ouverture du cv..."
                 window.open("ressources/CV_Tristan_TOURBIER.pdf");
                 break;
             case "projets":
-                rep = "ouverture de Github..."
+                rep = "Ouverture de Github..."
                 window.open("https://github.com/Titan327");
                 break;
             case "linkedin":
-                rep = "ouverture de Linkedin..."
+                rep = "Ouverture de Linkedin..."
                 window.open("https://www.linkedin.com/in/tristan-tourbier");
                 break;
             case "email":
-                rep = "tristan.tourbier@supinfo.com"
-                window.open("mailto:");
+                rep = "Voici mon adresse e-mail: tristan.tourbier@supinfo.com"
+                window.open("mailto:tristan.tourbier@supinfo.com");
                 break;
             case "whois":
                 rep = "Bonjour, je m'appele Tristan TOURBIER, étudiant de 2eme année en ecole d'informatique a Supinfo Lille. Sur ce site vous pourrez retrouver tout mes liens important, mes contacts ainsi que mon cv."
@@ -70,35 +68,20 @@ document.addEventListener("keydown", function(event) {
         }
 
         i = i + 1;
-
+        
         var new_input = document.createElement("p");
         new_input.id = `ligne_${i}`;
         new_input.class = "input";
         new_input.classList.add("input");
-        new_input.innerHTML = "" + '<span id="select">|</span>';
+        new_input.classList.add("curseur");
+        new_input.innerHTML = "";
         com.appendChild(new_input);
 
         console.log(i)
 
         cmd_body.scrollTop = cmd_body.scrollHeight;
 
+
     }
     
-    
-    
-
 });
-
-
-// gestion de la barre clignotante
-
-
-const char = document.getElementById("select");
-
-setInterval(function() {
-    if (char.style.visibility === "hidden") {
-    char.style.visibility = "visible";
-    } else {
-    char.style.visibility = "hidden";
-    }
-}, 500);
