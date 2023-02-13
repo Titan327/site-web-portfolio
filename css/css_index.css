@@ -1,7 +1,7 @@
 @font-face {
     font-family: "ubuntu_cmd";
-    src:url("../recources/Ubuntu-Medium.woff") format("woff"),
-        url("../recources/Ubuntu-Medium.woff2") format("woff2");
+    src:url("../ressources/Ubuntu-Medium.woff") format("woff"),
+        url("../ressources/Ubuntu-Medium.woff2") format("woff2");
          
 }
 
@@ -23,6 +23,7 @@ body {
     background: black;
     color: white;
     
+    
 }
 
 #terminal_top_bar{
@@ -43,12 +44,20 @@ body {
     padding-left: 10px;
     padding-top: 10px;
 
+    overflow: auto;    
+
+}
+
+#communication{
+
+    
+
 }
 
 textarea {
     display: none;
 }
 
-p::before{
+.input::before{
     content: "visiteur@tristan-tourbier.com:~$ ";
 }
