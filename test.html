@@ -1,19 +1,18 @@
-<div id="container">
-    <div id="line-1">Ligne 1</div>
+<div id="container" style="overflow:auto; height:100px;">
+    <p>Contenu de la div</p>
+    <p>Contenu de la div</p>
+    <p>Contenu de la div</p>
+    <p>Contenu de la div</p>
   </div>
+  
+  <button id="scroll-btn">Faire défiler</button>
   
   <script>
     const container = document.getElementById("container");
-    let lineNumber = 1;
+    const scrollBtn = document.getElementById("scroll-btn");
     
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        lineNumber++;
-        const newLine = document.createElement("div");
-        newLine.id = "line-${lineNumber}";
-        newLine.innerText = `Ligne ${lineNumber}`;
-        container.appendChild(newLine);
-      }
+    scrollBtn.addEventListener("click", function() {
+      container.scrollTop = container.scrollHeight;
     });
   </script>
   
