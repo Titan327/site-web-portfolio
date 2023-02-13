@@ -33,7 +33,7 @@ document.addEventListener("keydown", function(event) {
         var rep = "";
         switch(cmd_line.innerHTML){
             case "help":
-                rep = "Besoin d'aide ? Voici une liste des comandes:<br>cv -> Acceder à mon cv<br>projets -> voire mes projets sur Github<br>linkedin -> Acceder à mon Linkedin";
+                rep = "Besoin d'aide ? Voici une liste des comandes:<br><span style=\"color: yellow\">cv</span> -> Acceder à mon cv<br><span style=\"color: yellow\">projets</span> -> voire mes projets sur Github<br><span style=\"color: yellow\">linkedin</span> -> Acceder à mon Linkedin<br><span style=\"color: yellow\">email</span> -> pour pouvoir me contacter par mail<br><span style=\"color: yellow\">whois</span> -> qui suis-je";
                 break;
             case "cv":
                 rep = "ouverture du cv..."
@@ -46,6 +46,13 @@ document.addEventListener("keydown", function(event) {
             case "linkedin":
                 rep = "ouverture de Linkedin..."
                 window.open("https://www.linkedin.com/in/tristan-tourbier");
+                break;
+            case "email":
+                rep = "tristan.tourbier@supinfo.com"
+                window.open("mailto:example@example.com");
+                break;
+            case "whois":
+                rep = "Bonjour, je m'appele Tristan TOURBIER, étudiant de 2eme année en ecole d'informatique a Supinfo Lille. Sur ce site vous pourrez retrouver tout mes liens important, mes contacts ainsi que mon cv."
                 break;
             default:
                 rep = "Erreur: commande inconnue, utiliser \"help\" pour conaitre la liste de commandes";
