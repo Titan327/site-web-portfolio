@@ -32,10 +32,10 @@ document.addEventListener("keydown", function(event) {
         var rep = "";
         switch(cmd_line.innerHTML){
             case "help":
-                rep = "Besoin d'aide ? Voici une liste des comandes:<br><span style=\"color: yellow\">cv</span> -> Acceder à mon cv<br><span style=\"color: yellow\">projets</span> -> voire mes projets sur Github<br><span style=\"color: yellow\">linkedin</span> -> Acceder à mon Linkedin<br><span style=\"color: yellow\">email</span> -> pour pouvoir me contacter par mail<br><span style=\"color: yellow\">whois</span> -> qui suis-je";
+                rep = "Besoin d'aide ? Voici la liste des commandes:<br><span style=\"color: yellow\">cv</span> -> Acceder à mon cv<br><span style=\"color: yellow\">projets</span> -> voire mes projets sur Github<br><span style=\"color: yellow\">linkedin</span> -> Acceder à mon Linkedin<br><span style=\"color: yellow\">email</span> -> pour pouvoir me contacter par mail<br><span style=\"color: yellow\">whois</span> -> qui suis-je";
                 break;
             case "cv":
-                rep = "Ouverture du cv..."
+                rep = "Ouverture du CV..."
                 window.open("ressources/CV_Tristan_TOURBIER.pdf");
                 break;
             case "projets":
@@ -51,13 +51,13 @@ document.addEventListener("keydown", function(event) {
                 window.open("mailto:tristan.tourbier@supinfo.com");
                 break;
             case "whois":
-                rep = "Bonjour, je m'appele Tristan TOURBIER, étudiant de 2eme année en ecole d'informatique a Supinfo Lille. Sur ce site vous pourrez retrouver tout mes liens important, mes contacts ainsi que mon cv."
+                rep = "Bonjour, je m'appelle Tristan TOURBIER, étudiant en 2ème année d'école d'informatique à Supinfo Lille. Sur ce site vous pourrez retrouver tout mes liens importants, mes contacts, ainsi que mon CV."
                 break;
             case "":
                 rep = " "
                 break;
             default:
-                rep = "Erreur: commande inconnue, utiliser \"help\" pour conaitre la liste de commandes";
+                rep = "Erreur: commande inconnue, utilisez \"help\" pour connaître la liste des commandes";
         }
 
         if(rep != ""){
@@ -85,3 +85,19 @@ document.addEventListener("keydown", function(event) {
     }
     
 });
+
+var etat_t = 0;
+
+setInterval(() => {
+    var titre = document.getElementById("title");
+    
+    if(etat_t === 0){
+        etat_t = 1;
+        titre.innerHTML = "\\ Tristan TOURBIER /"
+    }
+    else{
+        etat_t = 0;
+        titre.innerHTML = "/ Tristan TOURBIER \\"
+    }
+
+  }, 500);
