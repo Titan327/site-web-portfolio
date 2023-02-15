@@ -1,7 +1,7 @@
 @font-face {
     font-family: "ubuntu_cmd";
-    src:url("../ressources/Ubuntu-Medium.woff") format("woff"),
-        url("../ressources/Ubuntu-Medium.woff2") format("woff2");
+    src:url("../ressources/font/Ubuntu-Medium.woff") format("woff"),
+        url("../ressources/font/Ubuntu-Medium.woff2") format("woff2");
          
 }
 
