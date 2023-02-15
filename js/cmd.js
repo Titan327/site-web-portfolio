@@ -9,6 +9,8 @@ var cmd_body = document.getElementById("terminal_body");
 
 i = 1;
 
+//Gestion des inputs
+
 document.addEventListener("keydown", function(event) {
 
     var key_press = event.key;
@@ -25,6 +27,7 @@ document.addEventListener("keydown", function(event) {
         cmd_line.innerHTML = cmd_line.innerHTML.slice(0,-1);
 
     }
+    //Gestion de l'execution des commandes
     else if(key_press === "Enter"){
 
         cmd_line.classList.remove("curseur");
@@ -85,6 +88,8 @@ document.addEventListener("keydown", function(event) {
     }
     
 });
+
+//Animation de la balise title
 
 var etat_t = 0;
 
