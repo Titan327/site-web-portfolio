@@ -84,7 +84,6 @@ document.addEventListener("keydown", function(event) {
 
         cmd_body.scrollTop = cmd_body.scrollHeight;
 
-
     }
     
 });
