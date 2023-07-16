@@ -105,3 +105,13 @@ setInterval(() => {
     }
 
   }, 500);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var divElement = document.getElementById('terminal');
+    var inputField = document.getElementById('focus');
+
+    divElement.addEventListener('click', function() {
+        inputField.focus();
+    });
+});
