@@ -113,5 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     divElement.addEventListener('click', function() {
         inputField.focus();
+        console.log("test")
     });
 });

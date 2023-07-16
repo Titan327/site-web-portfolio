@@ -5,10 +5,12 @@
          
 }
 
+
 #focus {
   display: none;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
+
 
 body {
     margin: 0;
