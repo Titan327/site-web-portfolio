@@ -5,6 +5,11 @@
          
 }
 
+#focus {
+  display: none;
+  pointer-events: none;
+}
+
 body {
     margin: 0;
     background-color: #130;
